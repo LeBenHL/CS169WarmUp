@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   ERR_BAD_PASSWORD = -4
 
   def self.login(user, password)
-    @user = User.where("user = ?", user)
+    @user = User.where("user = ?", user)[0]
     if @user
       return ERR_BAD_CREDENTIALS unless @user.password == password
       @user.count += 1
@@ -26,17 +26,16 @@ class User < ActiveRecord::Base
     begin
       @user = User.create!(:user => user, :password => password, :count => 1)
     rescue => ex
-      return ex.message
-      case ex.message
-        when "Validation failed: User can't be blank"
+      message = ex.message
+      case
+        when message =~ /User can't be blank/i
           return ERR_BAD_USER_NAME
-        when "Validation failed: User is too long (maximum is 128 characters)"
+        when message =~ /User is too long/i
           return ERR_BAD_USER_NAME
-        when "Validation failed: User has already been taken"
+        when message =~ /User has already been taken/i
           return ERR_USER_EXISTS
-        when "Validation failed: Password is too long (maximum is 128 characters)"
+        when message =~ /Password is too long/i
           return ERR_BAD_PASSWORD
-        return
       end
     end
     return @user.count

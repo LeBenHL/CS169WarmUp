@@ -1,5 +1,10 @@
 CS169WarmUp::Application.routes.draw do
-  resources :users
+
+  match '/users/login' => 'Users#login', :via => :post
+  match '/users/add' => 'Users#add', :via => :post
+  match '/TESTAPI/resetFixture' => 'Users#resetFixture', :via => :post
+  match '/TESTAPI/unitTests' => 'Users#unitTests', :via => :post
+
 
 
   # The priority is based upon order of creation:
