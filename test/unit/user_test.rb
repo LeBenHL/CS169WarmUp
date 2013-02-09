@@ -5,9 +5,9 @@ class UserTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "Add a User" do
-    response = User.add("Ben", "BenPassword")
+    response = User.add("Ben1", "BenPassword")
     assert_equal(1, response)
-    assert_not_nil(User.where(:user => "Ben"))
+    assert_not_nil(User.where(:user => "Ben1"))
   end
 
   test "Add Multiple Users" do

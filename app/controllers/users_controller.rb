@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     print "HIHIHI"
     #resetTestDb = system 'rake db:test:prepare'
     response = `ruby -Itest test/unit/user_test.rb`
-    parseResponse = response.scan(/[\s\S]+Finished tests.*([\s\S]+)\n([0-9]+) tests, ([0-9]+) assertions, ([0-9]+) failures, ([0-9]+) errors, ([0-9]+) skips/)[0]
+    parseResponse = response.scan(/[\s\S]+Finished in.*([\s\S]+)\n([0-9]+) tests, ([0-9]+) assertions, ([0-9]+) failures, ([0-9]+) errors, ([0-9]+) skips/)[0]
     totalTests = parseResponse[1].to_i
     nrFailed = parseResponse[3].to_i
     output = parseResponse[0]
