@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   ERR_BAD_PASSWORD = -4
 
   def self.login(user, password)
-    @user = User.where("user = ?", user)[0]
+    @user = User.where(:user => user)[0]
     if @user
       return ERR_BAD_CREDENTIALS unless @user.password == password
       @user.count += 1

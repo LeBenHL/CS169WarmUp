@@ -7,22 +7,22 @@ class UserTest < ActiveSupport::TestCase
   test "Add a User" do
     response = User.add("Ben", "BenPassword")
     assert_equal(1, response)
-    assert_not_nil(User.where("user = ?", "Ben"))
+    assert_not_nil(User.where(:user => "Ben"))
   end
 
   test "Add Multiple Users" do
     response = User.add("Ben2", "BenPassword")
     assert_equal(1, response)
-    assert_not_nil(User.where("user = ?", "Ben2"))
+    assert_not_nil(User.where(:user => "Ben2"))
     response = User.add("Ben3", "BenPassword")
     assert_equal(1, response)
-    assert_not_nil(User.where("user = ?", "Ben3"))
+    assert_not_nil(User.where(:user => "Ben3"))
   end
 
   test "Add a User w/o password" do
     response = User.add("Ben4", "")
     assert_equal(1, response)
-    assert_not_nil(User.where("user = ?", "Ben4"))
+    assert_not_nil(User.where(:user => "Ben4"))
   end
 
   test "Add a User w/ blank username" do
@@ -34,7 +34,7 @@ class UserTest < ActiveSupport::TestCase
     username = "H" * 128
     response = User.add(username, "BenPassword")
     assert_equal(1, response)
-    assert_not_nil(User.where("user = ?", username))
+    assert_not_nil(User.where(:user => username))
   end
 
   test "Add a User w/ username too long" do
@@ -53,7 +53,7 @@ class UserTest < ActiveSupport::TestCase
     password = "H" * 128
     response = User.add("Ben6", password)
     assert_equal(1, response)
-    assert_not_nil(User.where("user = ?", "Ben6"))
+    assert_not_nil(User.where(:user => "Ben6"))
   end
 
   test "Add a User w/ password too long" do
