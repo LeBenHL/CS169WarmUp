@@ -31,10 +31,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_test.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="user_test.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/unit/user_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="59" selection-start="2558" selection-end="2558" vertical-scroll-proportion="0.46902654">
+            <state line="88" column="59" selection-start="2558" selection-end="2558" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="8" selection-start="164" selection-end="164" vertical-scroll-proportion="0.13274336">
               <folding />
             </state>
           </provider>
@@ -80,6 +89,7 @@
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/test/unit/user_test.rb" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -537,7 +547,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/user_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="59" selection-start="2558" selection-end="2558" vertical-scroll-proportion="0.46902654">
+        <state line="88" column="59" selection-start="2558" selection-end="2558" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="8" selection-start="164" selection-end="164" vertical-scroll-proportion="0.13274336">
           <folding />
         </state>
       </provider>
