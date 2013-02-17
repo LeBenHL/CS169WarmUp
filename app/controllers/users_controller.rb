@@ -37,7 +37,6 @@ class UsersController < ApplicationController
   end
 
   def unitTests
-    print "HIHIHI"
     #resetTestDb = system 'rake db:test:prepare'
     response = `ruby -Itest test/unit/user_test.rb`
     parseResponse = response.scan(/[\s\S]+Finished in.*([\s\S]+)\n([0-9]+) tests, ([0-9]+) assertions, ([0-9]+) failures, ([0-9]+) errors, ([0-9]+) skips/)[0]
