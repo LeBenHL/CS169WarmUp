@@ -121,7 +121,7 @@ public class MainActivity extends Activity {
        }
        
     // Given a URL, establishes an HttpUrlConnection, POSTS JSON data
-    // and retrieves the JSON Object back from the server
+    // and retrieves the JSON Object back from the reserver
     private JSONObject postUrl(String myurl) throws IOException {
         InputStream is = null;   
         try {

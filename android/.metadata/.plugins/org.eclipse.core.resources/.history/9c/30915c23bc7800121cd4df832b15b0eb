@@ -55,8 +55,9 @@ public class MainActivity extends Activity {
         String stringUrl = "http://enigmatic-retreat-6639.herokuapp.com/users/login";
         ConnectivityManager connMgr = (ConnectivityManager) 
             getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
+        //NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        //if (networkInfo != null && networkInfo.isConnected()) {
+        if (true) {
             new getJSON().execute(stringUrl);
         } else {
             loginMessage.setText("No network connection available.");
@@ -69,7 +70,8 @@ public class MainActivity extends Activity {
         ConnectivityManager connMgr = (ConnectivityManager) 
             getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
+        //if (networkInfo != null && networkInfo.isConnected()) {
+        if (true) {
             new getJSON().execute(stringUrl);
         } else {
             loginMessage.setText("No network connection available.");
@@ -89,7 +91,7 @@ public class MainActivity extends Activity {
                return null;
            }
        }
-       // onPostExecute reads JSON Object and responds appropriately to the error messages.
+       // onPostExecute saves JSON Object for Activity to access later
        protected void onPostExecute(Object o) {
     	   try {
 	           JSONObject json = (JSONObject) o; 
@@ -120,8 +122,9 @@ public class MainActivity extends Activity {
     	   }
        }
        
-    // Given a URL, establishes an HttpUrlConnection, POSTS JSON data
-    // and retrieves the JSON Object back from the server
+    // Given a URL, establishes an HttpUrlConnection and retrieves
+    // the web page content as a InputStream, which it returns as
+    // a string.
     private JSONObject postUrl(String myurl) throws IOException {
         InputStream is = null;   
         try {
